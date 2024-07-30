@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="#7FC9EB"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    tools:context=".card_pa_enfermos">
+
+    <LinearLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="127dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:layout_weight="1"
+            android:background="#FFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNomEnfermo"
+                android:layout_width="203dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Nombre"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.093" />
+
+            <ImageView
+                android:id="@+id/btnEnfermoDelete"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@+id/txtNomEnfermo"
+                app:srcCompat="@drawable/ic_delete"
+                tools:layout_editor_absoluteY="21dp" />
+
+            <ImageView
+                android:id="@+id/btnEnfermoEdit"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.304"
+                app:layout_constraintStart_toEndOf="@+id/btnEnfermoDelete"
+                app:srcCompat="@drawable/ic_editar"
+                tools:layout_editor_absoluteY="21dp" />
+
+            <TextView
+                android:id="@+id/txtApellidoEnfermo"
+                android:layout_width="203dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Apellido"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/btnEnfermoDelete"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNomEnfermo" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

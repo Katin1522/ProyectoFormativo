@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    tools:context=".editar_pa_enfermos">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="265dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_weight="1"
+            android:background="#FFFF"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtEEdadEd"
+                android:layout_width="203dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:hint="Edad"
+                android:inputType="number"
+                android:paddingBottom="4dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.042" />
+
+            <EditText
+                android:id="@+id/txtEEnfermedadesEd"
+                android:layout_width="203dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:hint="Enfermedad"
+                android:paddingBottom="4dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEEdadEd" />
+
+            <EditText
+                android:id="@+id/txtNumHabEd"
+                android:layout_width="203dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
+                android:hint="Numero de la Habitación"
+                android:inputType="number"
+                android:paddingBottom="4dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEEnfermedadesEd" />
+
+            <EditText
+                android:id="@+id/txtCamaEd"
+                android:layout_width="203dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
+                android:hint="Cantidad de Camas"
+                android:inputType="number"
+                android:paddingBottom="4dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNumHabEd" />
+
+            <EditText
+                android:id="@+id/txtFechaIEd"
+                android:layout_width="203dp"
+                android:layout_height="33dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:hint="Fecha del Ingreso"
+                android:inputType="date"
+                android:paddingBottom="4dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCamaEd"
+                app:layout_constraintVertical_bias="0.533" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="59dp"
+                android:layout_height="51dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintStart_toEndOf="@+id/txtEEdadEd"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.089"
+                app:srcCompat="@drawable/ic_android_black_24dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

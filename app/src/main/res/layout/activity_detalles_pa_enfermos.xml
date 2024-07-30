@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    tools:context=".detalles_pa_enfermos">
+
+    <LinearLayout
+        android:background="@color/white"
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txtEnfermoNomD"
+                android:layout_width="247dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Nombre del Enfermo"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txtEnfermoApellidoD"
+                android:layout_width="242dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Apellido del Enfermo"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEnfermoNomD" />
+
+            <TextView
+                android:id="@+id/txtEnfermoEdadD"
+                android:layout_width="203dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Edad de Enfermo"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEnfermoApellidoD" />
+
+            <TextView
+                android:id="@+id/txtEnfermoEnferD"
+                android:layout_width="259dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Enfermedad de Enfermo"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.163"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEnfermoEdadD" />
+
+            <TextView
+                android:id="@+id/txtNumHabD"
+                android:layout_width="215dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Num habitación"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEnfermoEnferD" />
+
+            <TextView
+                android:id="@+id/txtCamaD"
+                android:layout_width="215dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Cantidad de Camas"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNumHabD" />
+
+            <TextView
+                android:id="@+id/txtFechaID"
+                android:layout_width="215dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Fecha de Ingreso"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCamaD" />
+
+            <TextView
+                android:id="@+id/txtMedD"
+                android:layout_width="215dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Medicamento dado"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFechaID" />
+
+
+            <TextView
+                android:id="@+id/txtAsigHoraD"
+                android:layout_width="255dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="4dp"
+                android:text="Asignacion de Hora"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.155"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMedD"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="87dp"
+                android:layout_height="68dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.692"
+                app:layout_constraintStart_toEndOf="@+id/txtEnfermoNomD"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.042"
+                app:srcCompat="@drawable/ic_android_black_24dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
