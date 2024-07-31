@@ -23,10 +23,8 @@ class splash_screen : AppCompatActivity() {
         }
 
         GlobalScope.launch(Dispatchers.Main) {
-            delay(3000)
-
-            val panInicio = Intent(this@splash_screen, MainActivity::class.java)
-            startActivity(panInicio)
+            delay(4000)
+            startActivity(Intent(this@splash_screen, MainActivity::class.java))
             finish()
         }
     }

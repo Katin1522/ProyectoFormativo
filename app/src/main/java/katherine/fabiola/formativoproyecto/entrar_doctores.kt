@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -66,9 +67,11 @@ class entrar_doctores : AppCompatActivity() {
                                 Toast.LENGTH_LONG
                             ).show()
                         }
+
                     }
                 }
             }
+
         }
     }
 }
