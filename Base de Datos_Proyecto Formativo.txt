@@ -1,0 +1,218 @@
+CREATE TABLE doctores (
+    id_doctores INT PRIMARY KEY,
+    correo_doctores VARCHAR2(100) NOT NULL,
+    contrasena_doctores VARCHAR2(50) NOT NULL
+);
+
+SELECT * FROM doctores WHERE correo_doctores = 'katherinesofia@gmail.com' AND contrasena_doctores = '0103050709';
+
+COMMIT;
+
+SELECT * FROM doctores;
+drop table doctores;
+
+CREATE SEQUENCE sec_doctores START WITH 1 INCREMENT BY 1;
+
+CREATE TRIGGER trigdoctores BEFORE
+    INSERT ON doctores
+    FOR EACH ROW
+BEGIN
+    SELECT
+        sec_doctores.NEXTVAL
+    INTO :new.id_doctores
+    FROM
+        dual;
+
+END;
+
+INSERT INTO doctores (
+    correo_doctores,
+    contrasena_doctores
+) VALUES (
+    'katherinesofia@gmail.com',
+    '0103050709'
+); 
+
+INSERT INTO doctores (
+    correo_doctores,
+    contrasena_doctores
+) VALUES (
+    'fabiolaalexandra@gmail.com',
+    '0204060801'
+);
+
+select * from doctores;
+
+CREATE TABLE pa_Enfermos (
+    id_pa_enfermos INT PRIMARY KEY,
+    nombre_enfermo  VARCHAR2(100) NOT NULL,
+    apellido_enfermo VARCHAR2(100) NOT NULL,
+    edad INT NOT NULL,
+    enfermo_enfermedad VARCHAR2(200) NOT NULL,
+    numero_hab INT NOT NULL,
+    cama_numero INT NOT NULL,
+    fecha VARCHAR2(100) NOT NULL
+);
+
+CREATE SEQUENCE sec_pa_enfermos START WITH 1 INCREMENT BY 1;
+
+CREATE TRIGGER trigpaenfermos BEFORE
+    INSERT ON pa_Enfermos
+    FOR EACH ROW
+BEGIN
+    SELECT
+        sec_pa_enfermos.NEXTVAL
+    INTO :new.id_pa_enfermos
+    FROM
+        dual;
+
+END;
+
+INSERT INTO pa_Enfermos (
+    nombre_enfermo,
+    apellido_enfermo,
+    edad,
+    enfermo_enfermedad,
+    numero_hab,
+    cama_numero,
+    fecha
+) VALUES (
+    'Fernando',
+    'Morales',
+    17,
+    'Fiebre Alta',
+    11,
+    1,
+    '13/12/2007'
+);
+
+INSERT INTO pa_Enfermos (
+    nombre_enfermo,
+    apellido_enfermo,
+    edad,
+    enfermo_enfermedad,
+    numero_hab,
+    cama_numero,
+    fecha
+) VALUES (
+    'Jesus',
+    'Stanley',
+    18,
+    'Tos seca',
+    12,
+    2,
+    '05/09/2006'
+);
+
+SELECT * FROM pa_Enfermos;
+
+CREATE TABLE medicamentos (
+    id_medicamentos INT PRIMARY KEY,
+    medicamentos_nombre VARCHAR2(100) NOT NULL,
+    descripcion_med  VARCHAR2(500) NOT NULL
+);
+
+CREATE SEQUENCE sec_medicamentos START WITH 1 INCREMENT BY 1;
+
+CREATE TRIGGER trigmedicamentos BEFORE
+    INSERT ON medicamentos
+    FOR EACH ROW
+BEGIN
+    SELECT
+        sec_medicamentos.NEXTVAL
+    INTO :new.id_medicamentos
+    FROM
+        dual;
+
+END;
+
+INSERT INTO medicamentos (
+    medicamentos_nombre,
+    descripcion_med
+) VALUES (
+    'Suero en Polvo',
+    'Suero en polvo para el apoyo de la deshidratacion'
+); 
+
+INSERT INTO medicamentos (
+    medicamentos_nombre,
+    descripcion_med
+) VALUES (
+    'Loratadina',
+    'Pastilla para el alivio de mocos y tos seca'
+);
+
+SELECT * FROM medicamentos;
+
+CREATE TABLE asignacion_Medicamentos (
+    id_asignacion_med INT PRIMARY KEY,
+    asignacion_hora VARCHAR2(10) NOT NULL,
+    id_pa_enfermos INT,
+    id_medicamentos INT,
+    CONSTRAINT fk_pa_enfermos FOREIGN KEY ( id_pa_enfermos )
+        REFERENCES pa_Enfermos ( id_pa_enfermos ),
+    CONSTRAINT fk_medicamentos FOREIGN KEY ( id_medicamentos )
+        REFERENCES medicamentos ( id_medicamentos )
+);
+
+SELECT id_pa_enfermos FROM pa_Enfermos WHERE ( nombres || ' ' || apellidos ) = 'Fernando Morales';
+
+SELECT id_medicamentos FROM medicamentos WHERE medicamento_nombre = 'Suero en Polvo';
+
+SELECT * FROM pa_Enfermos;
+
+CREATE SEQUENCE sec_asignacion_med START WITH 1 INCREMENT BY 1;
+
+CREATE TRIGGER trigasignacionmed BEFORE
+    INSERT ON asignacion_Medicamentos
+    FOR EACH ROW
+BEGIN
+    SELECT
+        sec_asignacion_med.NEXTVAL
+    INTO :new.id_asignacion_med
+    FROM
+        dual;
+
+END;
+
+INSERT INTO asignacion_Medicamentos (
+    asignacion_hora,
+    id_pa_enfermos,
+    id_medicamentos
+) VALUES (
+    '3:33am',
+    23,
+    23
+);
+
+INSERT INTO asignacion_Medicamentos (
+    asignacion_hora,
+    id_pa_enfermos,
+    id_medicamentos
+) VALUES (
+    '11:00pm',
+    24,
+    24
+);
+
+SELECT * FROM asignacion_Medicamentos;
+SELECT * FROM doctores;
+SELECT * FROM medicamentos;
+SELECT * FROM pa_Enfermos;
+
+
+
+SELECT
+    pe.nombre_enfermo AS nombre,
+    pe.apellido_enfermo AS apellido,
+    pe.edad AS edad,
+    pe.enfermo_enfermedad AS enfermedad,
+    pe.numero_hab AS habitacion,
+    pe.cama_numero AS cama,
+    pe.fecha AS fecha,
+    m.medicamentos_nombre AS medicamentos,
+    ah.asignacion_hora
+FROM
+         asignacion_Medicamentos ah
+    INNER JOIN pa_Enfermos pe ON ah.id_pa_enfermos = pe.id_pa_enfermos
+    INNER JOIN medicamentos m ON ah.id_medicamentos = m.id_medicamentos;
