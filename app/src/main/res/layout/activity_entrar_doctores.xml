@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F2F2EB"
     tools:context=".entrar_doctores">
 
     <TextView
@@ -23,7 +24,7 @@
     <EditText
         android:id="@+id/txtCorreoDoctor"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="text"
@@ -32,12 +33,26 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323" />
+        app:layout_constraintVertical_bias="0.609" />
+
+    <Button
+        android:id="@+id/btnIngresarDoctor"
+        android:layout_width="163dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#98ABD2"
+        android:text="Ingresar"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.886" />
 
     <EditText
         android:id="@+id/txtContrasenaDoctor"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="text"
@@ -46,18 +61,17 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintVertical_bias="0.715" />
 
-    <Button
-        android:id="@+id/btnIngresarDoctor"
-        android:layout_width="155dp"
-        android:layout_height="75dp"
-        android:text="Ingresar"
-        android:textSize="24sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="223dp"
+        android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
+        app:layout_constraintVertical_bias="0.286"
+        app:srcCompat="@drawable/tabletamedi" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
