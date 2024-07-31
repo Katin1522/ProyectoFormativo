@@ -11,10 +11,10 @@
     tools:context=".editar_pa_enfermos">
 
     <LinearLayout
-        android:background="@color/white"
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="265dp"
+        android:background="#F2F2EB"
         android:orientation="horizontal"
         android:padding="16dp">
 

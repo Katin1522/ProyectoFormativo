@@ -48,20 +48,24 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/txtNomEnfermo"
-                app:srcCompat="@drawable/ic_delete"
-                tools:layout_editor_absoluteY="21dp" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_delete" />
 
             <ImageView
                 android:id="@+id/btnEnfermoEdit"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.304"
                 app:layout_constraintStart_toEndOf="@+id/btnEnfermoDelete"
-                app:srcCompat="@drawable/ic_editar"
-                tools:layout_editor_absoluteY="21dp" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_editar" />
 
             <TextView
                 android:id="@+id/txtApellidoEnfermo"
